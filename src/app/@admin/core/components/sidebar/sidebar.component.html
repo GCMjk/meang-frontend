@@ -1,0 +1,19 @@
+<div class="sidebar border-end bg-light">
+
+    <div class="sidebar__heading border-bottom">
+        <a class="text-muted text-secondary text-decoration-none" [routerLink]="['/home']" routerLinkActive="">
+            Admin Panel
+        </a>
+    </div>
+    <div class="sidebar__list list-group list-group-flush">
+
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" [routerLink]="['/admin']" routerLinkActive="">
+            <i class="fas fa-columns"></i> Dashboard
+        </a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" [routerLink]="['/admin/users']" routerLinkActive="">
+            <i class="fas fa-users"></i> Usuarios
+        </a>
+
+    </div>
+
+</div>
