@@ -1,13 +1,5 @@
-<h1>Public</h1>
-<ul>
-    <li>
-        <a [routerLink]="['/home']" routerLinkActive="">Home</a>
-    </li>
-    <li>
-        <a [routerLink]="['/contact']" routerLinkActive="">Contact</a>
-    </li>
-    <li>
-        <a [routerLink]="['/admin']" routerLinkActive="">Admin</a>
-    </li>
-</ul>
-<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div class="my-5">
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

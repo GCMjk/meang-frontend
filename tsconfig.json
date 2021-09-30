@@ -2,7 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src/app",
+    "paths": {
+      "@admin/*": ["@admin/*"],
+      "@admin-core/*": ["@admin/core/*"],
+      "@public/*": ["@public/*"],
+      "@public-core/*": ["@public/core/*"],
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
