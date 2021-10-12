@@ -1,4 +1,6 @@
-.navbar__logo img {
-    width: 25%;
+@import "../../../pages/public.component.scss";
+
+.navbar__logo {
+    width: 6em;
     vertical-align: middle;
 }

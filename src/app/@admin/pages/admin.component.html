@@ -1,14 +1,13 @@
-<div class="d-flex" id="wrapper">
+<div class="admin">
 
     <app-admin-sidebar *ngIf="toggledValue"></app-admin-sidebar>
     
-    <div id="page-content-wrapper">
+    <div class="admin__page-content">
 
         <app-admin-navbar (toggleChangeEvent)="toggled($event)"></app-admin-navbar>
         
-        <div class="container-fluid">
+        <div class="container m-4">
             
-            <app-admin-title></app-admin-title>
             <router-outlet></router-outlet>
         
         </div>

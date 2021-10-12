@@ -1,1 +1,32 @@
 @import "../../../pages/admin.component.scss";
+
+.navbar__left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar__notifications {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.navbar__notifications-icon {
+    background-color: $logout-color;
+}
+
+.navbar__profile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__profile-img {
+    margin-right: 1rem;
+    width: 30px;
+    border-radius: 50%;
+}

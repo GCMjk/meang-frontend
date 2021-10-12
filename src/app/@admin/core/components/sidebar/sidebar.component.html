@@ -1,19 +1,22 @@
-<div class="sidebar border-end bg-light">
+<div class="sidebar">
 
-    <div class="sidebar__heading border-bottom">
-        <a class="text-muted text-secondary text-decoration-none" [routerLink]="['/home']" routerLinkActive="">
-            Admin Panel
+    <div class="sidebar__heading">
+        <a [routerLink]="['/home']" routerLinkActive="">
+            <img class="sidebar__logo-img" src="../../../../../assets/img/logo/logo.svg" alt="">
         </a>
     </div>
     <div class="sidebar__list list-group list-group-flush">
 
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" [routerLink]="['/admin']" routerLinkActive="">
-            <i class="fas fa-columns"></i> Dashboard
+        <a class="sidebar__item list-group-item list-group-item-action" [routerLink]="['/admin']" routerLinkActive="sidebar__item--active">
+            <i class="fas fa-columns me-2"></i> Dashboard
         </a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" [routerLink]="['/admin/users']" routerLinkActive="">
-            <i class="fas fa-users"></i> Usuarios
+        <a class="sidebar__item list-group-item list-group-item-action" [routerLink]="['/admin/users']" routerLinkActive="sidebar__item--active">
+            <i class="fas fa-users me-2"></i> Usuarios
         </a>
 
     </div>
+    <a class="sidebar__item sidebar__item--log-out" [routerLink]="['/admin/users']" >
+        <i class="fas fa-sign-out-alt"></i> Log out
+    </a>
 
 </div>

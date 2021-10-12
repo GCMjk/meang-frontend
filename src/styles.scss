@@ -1,1 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "./assets/styles/colors.scss";
+@import "./assets/styles/typography.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";

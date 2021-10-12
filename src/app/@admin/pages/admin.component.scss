@@ -1,37 +1,17 @@
-@import "../../../assets/styles/colors.scss";
+@import "../../app.component.scss";
 
-#wrapper {
+.admin {
+    display: flex;
     overflow-x: hidden;
 }
 
-#page-content-wrapper {
+.admin__page-content {
     min-width: 100vw;
 }
 
-.sidebar {
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-}
-
-.sidebar__heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
-}
-
-.sidebar__list {
-    width: 15rem;
-}
-
-body.sb-sidenav-toggled #wrapper .sidebar {
-    margin-left: 0;
-}
-
 @media (min-width: 768px) {
-    #page-content-wrapper {
+    
+    .admin__page-content {
         min-width: 0;
         width: 100%;
     }
@@ -40,7 +20,4 @@ body.sb-sidenav-toggled #wrapper .sidebar {
         margin-left: 0;
     }
 
-    body.sb-sidenav-toggled #wrapper .sidebar {
-        margin-left: -15rem;
-    }
 }
