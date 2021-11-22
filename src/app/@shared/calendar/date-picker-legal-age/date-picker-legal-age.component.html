@@ -1,0 +1,20 @@
+<label for="{{formControlname}}" class="form-label">
+    {{formLabel}}
+</label>
+<div [formGroup]="parentForm" class="input-group">
+    <input
+        class="form-control"
+        type="text"
+        formControlName="{{formControlname}}"
+        placeholder="{{inputPlaceholder}}"
+        ngbDatepicker 
+        #d="ngbDatepicker"
+        (click)="d.toggle()"
+        [(ngModel)]="model"
+        (ngModelChange)="selectDateChange()"
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        
+    />
+    <span class="input-group-text fas fa-calendar"></span>
+</div>

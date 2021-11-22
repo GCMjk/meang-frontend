@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 sticky-top">
     <div class="container-fluid">
 
-        <a class="navbar-brand" 
+        <a class="navbar-brand d-flex" 
             [routerLink]="['/']" routerLinkActive="">
                 <img class="navbar__logo" src="../../../../../assets/img/logo/logo.svg" alt="Logo">
         </a>
@@ -24,10 +24,43 @@
                         Contact
                 </a>
 
-                <a class="nav-link text-primary" 
-                    [routerLink]="['/admin']" routerLinkActive="">
-                        Admin
+                <a class="nav-link" *ngIf="!access"
+                    [routerLink]="['/login']" routerLinkActive="">
+                        Login
                 </a>
+
+                <a class="nav-link" *ngIf="!access"
+                    [routerLink]="['/register']" routerLinkActive="">
+                        Register
+                </a>
+
+                <div class="nav-item dropdown" *ngIf="access">
+                    <a class="nav-link dropdown dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ userLabel }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                        <a class="dropdown-item text-primary" *ngIf="access && role == 'ADMIN'"
+                            [routerLink]="['/admin']" routerLinkActive="">
+                                Admin
+                        </a>
+                        <a class="dropdown-item"
+                            [routerLink]="['']" routerLinkActive="">
+                                Perfil
+                        </a>
+                        <a class="dropdown-item"
+                            [routerLink]="['']" routerLinkActive="">
+                                Configuración
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" role="button"
+                            (click)="logout()">
+                                Cerrar sesión
+                        </a>
+                        
+                    </div>
+                </div>
 
             </div>
         </div>

@@ -1,0 +1,140 @@
+<div class="container">
+    <form class="row" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+
+        <!-- Register -->
+        <p class="display-2">
+            Registro
+        </p>
+
+        <!-- Name -->
+        <div class="col-6 mb-3">
+            <label for="name" class="form-label">
+                Nombre
+            </label>
+            <input class="form-control" type="text" placeholder="Introduzca su nombre"
+                formControlName="name"
+                [ngClass]="{ 'is-invalid': controls.name.invalid && (controls.name.dirty || controls.name.touched) }">
+            <!-- Errors validators -->
+            <div class="invalid-feedback"
+                *ngIf=" controls.name.invalid && (controls.name.dirty || controls.name.touched) ">
+                    <div *ngIf="controls.name.errors?.required">
+                        Su nombre es obligatorio
+                    </div>
+            </div>
+        </div>
+
+        <!-- Lastname -->
+        <div class="col-6 mb-3">
+            <label for="lastname" class="form-label">
+                Apellido
+            </label>
+            <input class="form-control" type="text" placeholder="Introduzca su apellido"
+                formControlName="lastname"
+                [ngClass]="{ 'is-invalid': controls.lastname.invalid && (controls.lastname.dirty || controls.lastname.touched) }">
+            <!-- Errors validators -->
+            <div class="invalid-feedback"
+                *ngIf=" controls.lastname.invalid && (controls.lastname.dirty || controls.lastname.touched) ">
+                    <div *ngIf="controls.lastname.errors?.required">
+                        Uno de sus apellidos es obligatorio
+                    </div>
+            </div>
+        </div>
+
+        <!-- Age -->
+        <app-date-picker-legal-age
+            class="col-12 mb-3"
+            [parentForm]="registerForm"
+            [formControlname]="'birthday'"
+            [formLabel]="'Fecha de nacimiento: '"
+            [inputPlaceholder]="'Seleccione una fecha'"
+            (newDate)="selectDate($event)">
+        </app-date-picker-legal-age>
+        <!-- Errors validators -->
+        <div class="invalid-feedback"
+            *ngIf=" controls.birthday.invalid && (controls.birthday.dirty || controls.birthday.touched) ">
+            <div *ngIf="controls.birthday.errors?.required">
+                Seleccione su fecha de nacimiento
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">
+                Correo
+            </label>
+            <input class="form-control" type="email" placeholder="Introduzca su correo"
+                formControlName="email"
+                [ngClass]="{ 'is-invalid': controls.email.invalid && (controls.email.dirty || controls.email.touched) }">
+            <!-- Errors validators -->
+            <div class="invalid-feedback"
+                *ngIf=" controls.email.invalid && (controls.email.dirty || controls.email.touched) ">
+                    <div *ngIf="controls.email.errors?.required">
+                        Introduzca un correo
+                    </div>
+                    <div *ngIf="controls.email.errors?.pattern">
+                        Introduzca una dirección de correo valida
+                    </div>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div class="col-6 mb-3">
+            <label for="password" class="form-label">
+                Contraseña
+            </label>
+            <input class="form-control" type="password" placeholder="Introduzca su contraseña"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': controls.password.invalid && (controls.password.dirty || controls.password.touched) }">
+            <!-- Errors validators -->
+            <div class="invalid-feedback"
+                *ngIf=" controls.password.invalid && (controls.password.dirty || controls.password.touched) ">
+                    <div *ngIf="controls.password.errors?.required">
+                        Introduzca una contraseña
+                    </div>
+                    <div *ngIf="controls.password.errors?.minlength">
+                        La cotraseña debe ser mayor a {{ minCharacters }} carácteres
+                    </div>
+                    <div *ngIf="controls.password.errors?.minlength">
+                        Las cotraseñas no coinciden
+                    </div>
+            </div>
+        </div>
+
+        <!-- Repeat password -->
+        <div class="col-6 mb-3">
+            <label for="password" class="form-label">
+                Confirmar contraseña
+            </label>
+            <input class="form-control" type="password" placeholder="Confirme su contraseña"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': controls.password.invalid && (controls.password.dirty || controls.password.touched) }">
+            <!-- Errors validators -->
+            <div class="invalid-feedback"
+                *ngIf=" controls.password.invalid && (controls.password.dirty || controls.password.touched) ">
+                    <div *ngIf="controls.password.errors?.required">
+                        Introduzca una contraseña
+                    </div>
+                    <div *ngIf="controls.password.errors?.minlength">
+                        La cotraseña es mayor a {{ minCharacters }} carácteres
+                    </div>
+                    <div *ngIf="controls.password.errors?.minlength">
+                        Las contraseñas no coinciden
+                    </div>
+            </div>
+        </div>
+        
+        <!-- logIn -->
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success mb-3">
+            Iniciar sesión
+        </button>
+
+        <!-- You have an account? -->
+        <p class="form-text">
+            ¿Tienes cuenta? Inicia sesión
+                <a class="text-decoration-none" routerLink="/login">
+                    aquí
+                </a>
+        </p>
+
+    </form>
+</div>
